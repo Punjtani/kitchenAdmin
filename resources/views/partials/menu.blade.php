@@ -56,16 +56,14 @@
                 </div>
             </div>
         @endcan
-        @can('project_access')
+        @can('product_access')
             <a class="nav-link{{ request()->is('admin/projects*') ? ' active' : '' }}" href="{{ route('admin.projects.index') }}">
                 <i class="fa-fw fas fa-project-diagram">
-
                 </i>
-
                 <span class="mx-4">{{ trans('cruds.project.title') }}</span>
             </a>
         @endcan
-        @can('folder_access')
+        <!-- @can('folder_access')
             <a class="nav-link{{ request()->is('admin/folders*') ? ' active' : '' }}" href="{{ route('admin.folders.index') }}">
                 <i class="fa-fw fas fa-folder">
 
@@ -73,7 +71,7 @@
 
                 <span class="mx-4">{{ trans('cruds.folder.title') }}</span>
             </a>
-        @endcan
+        @endcan -->
         @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
             <a class="nav-link{{ request()->is('profile/password') ? ' active' : '' }}" href="{{ route('profile.password.edit') }}">
                 <i class="fa-fw fas fa-key">

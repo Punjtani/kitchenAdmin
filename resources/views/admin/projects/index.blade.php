@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('project_create')
+@can('product_create')
     <div class="block my-4">
         <a class="btn-md btn-green" href="{{ route('admin.projects.create') }}">
             {{ trans('global.add') }} {{ trans('cruds.project.title_singular') }}
@@ -52,19 +52,19 @@
                                 @endforeach
                             </td>
                             <td>
-                                @can('project_show')
+                                @can('product_show')
                                     <a class="btn-sm btn-indigo" href="{{ route('admin.projects.show', $project->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
-                                @can('project_edit')
+                                @can('product_edit')
                                     <a class="btn-sm btn-blue" href="{{ route('admin.projects.edit', $project->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
-                                @can('project_delete')
+                                @can('product_delete')
                                     <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -87,7 +87,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('project_delete')
+@can('product_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,

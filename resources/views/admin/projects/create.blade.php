@@ -14,6 +14,7 @@
                 <div class="form-group">
                     <input type="text" id="name" name="name" class="{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" required>
                 </div>
+
                 @if($errors->has('name'))
                     <p class="invalid-feedback">{{ $errors->first('name') }}</p>
                 @endif
@@ -42,4 +43,6 @@
         </div>
     </form>
 </div>
+
+
 @endsection

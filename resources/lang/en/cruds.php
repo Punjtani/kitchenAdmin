@@ -66,8 +66,8 @@ return [
         ],
     ],
     'project'        => [
-        'title'          => 'Projects',
-        'title_singular' => 'Project',
+        'title'          => 'Products',
+        'title_singular' => 'Product',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => '',
